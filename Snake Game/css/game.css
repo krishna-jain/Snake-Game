@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+}
+
+#heading
+{
+    font-size: 200px;
+    margin-left: 1100px;
+    font-family: cursive, Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    font-style: normal;
+    color: rgb(6, 3, 56);
+}
+
+.body
+{
+    background: url("../bg4.jpg");
+    min-height: 100vh; /* min view Port height fixed */ 
+    background-size: 100vw 100vh;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+   
+}
+
+#playField
+{
+    background: linear-gradient(rgb(146, 213, 218), rgb(144, 179, 80));
+    width: 85vmin;
+    height:85vmin;
+    margin-left: 800px;
+    margin-top: 50px;
+    border: 10px solid rgb(13, 36, 20);
+    display: grid;
+    grid-template-rows: repeat(20, 1fr);
+    grid-template-columns: repeat(20, 1fr);
+}
+
+.snakeHead
+{
+    background: linear-gradient(rgb(11, 85, 4), rgb(31, 192, 139));
+    border: .25vmin solid rgb(71, 128, 136);
+    border-radius: 10px;
+    transform: scale(1.03);
+}
+
+.food
+{
+    background: radial-gradient(rgb(244, 248, 8), rgb(153, 8, 8));
+    border: .25vmin solid rgb(2, 33, 59);
+    border-radius: 100px;
+}
+
+.snakeBody
+{
+    background-color: rgb(35, 173, 31);
+    border: .25vmin solid rgb(110, 196, 110);
+    border-radius: 20px;
+}
+
+#myScore
+{
+    position: absolute;
+    top: 80px;
+    right: 960px;
+    font-size: 150px;
+    font-style: normal;
+    font-weight: bold;
+    font-family: 'Inconsolata', monospace;
+}
+
+#myHighScore
+{
+    position: absolute;
+    top: 250px;
+    right: 500px;
+    font-size: 150px;
+    font-style: normal;
+    font-weight: bold;
+    font-family: 'Inconsolata', monospace;
+}
