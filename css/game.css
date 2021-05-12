@@ -6,19 +6,24 @@
 
 #heading
 {
-    font-size: 200px;
-    margin-left: 1100px;
+    font-size: 6.5vmin;
+    margin-left: 35vmin;
     font-family: cursive, Arial, Helvetica, sans-serif;
     font-weight: bolder;
     font-style: normal;
-    color: rgb(6, 3, 56);
+    color: rgb(10, 12, 0);
 }
-
+#heading:hover
+{
+    color: chocolate;
+    transition: all 0.5s ease;
+}
 .body
 {
+    border: solid .5vmin black;
     background: url("../bg4.jpg");
-    min-height: 100vh; /* min view Port height fixed */ 
-    background-size: 100vw 100vh;
+    min-height: 99vh; /* min view Port height fixed */ 
+    background-size: 99vw 99vh;
     /* display: flex;
     justify-content: center;
     align-items: center; */
@@ -27,12 +32,13 @@
 
 #playField
 {
+    position: absolute;
     background: linear-gradient(rgb(146, 213, 218), rgb(144, 179, 80));
     width: 85vmin;
     height:85vmin;
-    margin-left: 800px;
-    margin-top: 50px;
-    border: 10px solid rgb(13, 36, 20);
+    margin-left: 12vw;
+    margin-top: 2vh;
+    border: .75vmin solid rgb(13, 36, 20);
     display: grid;
     grid-template-rows: repeat(20, 1fr);
     grid-template-columns: repeat(20, 1fr);
@@ -42,42 +48,117 @@
 {
     background: linear-gradient(rgb(11, 85, 4), rgb(31, 192, 139));
     border: .25vmin solid rgb(71, 128, 136);
-    border-radius: 10px;
-    transform: scale(1.03);
+    border-radius: 0.75vmin;
+    transform: scale(1.04);
 }
 
 .food
 {
     background: radial-gradient(rgb(244, 248, 8), rgb(153, 8, 8));
     border: .25vmin solid rgb(2, 33, 59);
-    border-radius: 100px;
+    border-radius: 10vmin;
 }
 
 .snakeBody
 {
     background-color: rgb(35, 173, 31);
     border: .25vmin solid rgb(110, 196, 110);
-    border-radius: 20px;
+    border-radius: .75vmin;
 }
 
 #myScore
-{
+{  
     position: absolute;
-    top: 80px;
-    right: 960px;
-    font-size: 150px;
-    font-style: normal;
+    top: 3vmin;
+    right: 35vmin;
+    font-size: 5.5vmin;
     font-weight: bold;
     font-family: 'Inconsolata', monospace;
 }
 
 #myHighScore
+{ 
+    position: absolute;
+    top: 9vmin;
+    right: 18vmin;
+    font-size: 5.5vmin;
+    font-weight: bold;
+    font-family: 'Inconsolata', monospace;
+}
+
+#myTime
 {
     position: absolute;
-    top: 250px;
-    right: 500px;
-    font-size: 150px;
+    top: 11.5vmin;
+    right: 130vmin; 
+    font-size: 5vmin;
     font-style: normal;
     font-weight: bold;
     font-family: 'Inconsolata', monospace;
+}
+
+.myLeaderboard
+{
+    font-size: 5.5vmin;
+    position: relative;
+    margin-left: 135vmin;
+    margin-top: 7vmin;
+    max-width: 65vmin;
+    min-width: 65vmin;
+    border: solid .5vmin black;
+    border-radius: 0.75vmin;
+}
+
+.Leader
+{
+    font-size: 3.5vmin;
+    color: rgb(12, 29, 107);
+    text-align: center;
+    background-color: rgb(212, 224, 32);
+}
+table
+{
+    border-spacing: 0.5vmin;
+    font-size: 3.5vmin;
+    box-sizing: 4vmin;
+    /* box-sizing: border-box; */
+    width: 100%;
+    background-color: rgb(32, 124, 101);
+}
+thead
+{
+    font-size: 3.5vmin;
+    text-align: justify;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.row1
+{
+    font-size: 3.5vmin;
+    color: gold;
+    /* font-weight: bold; */
+}
+.row2
+{
+    font-size: 3.5vmin;
+    /* font-weight: bold; */
+    color: silver;
+}
+.row3
+{
+    font-size: 3.5vmin;
+    color: #CD7F32;
+    /* font-weight: bold; */
+}
+
+#myName
+{
+    position: absolute;
+    top: 1vmin;
+    left: 2vmin;
+    font-size: 4.5vmin;
+    font-weight: bold;
+    font-family: 'Inconsolata', monospace;
+    color: darkblue;
 }
