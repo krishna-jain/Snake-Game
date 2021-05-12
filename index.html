@@ -4,15 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" >
     <title>Snake Snack!</title>
     <link rel="icon" href="icon.jpg">
     <link rel="stylesheet" href="css/game.css">
 </head>
 
 <body>
-
     <div class="body">
+        <div id="myName">
+            Krishna
+        </div>
         <div id="myHighScore">
             High Score: 0
         </div>
@@ -22,8 +24,49 @@
         <p id="heading">
             Snake's Snack Time
         </p>
-        <div id="playField"></div>
+        <div id="playField">
+        </div>
+        <div id="myTime">
+            00:00
+        </div>
+        <div class="myLeaderboard">
+            <header class="Leader">
+                <h1>Leader Board</h1>
+            </header>
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Nickname</th>
+                        <th>Score</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class ="row1">
+                        <td>1.</td>
+                        <td>Krishna</td>
+                        <td>117</td>
+                        <td>07:24</td>
+                    </tr>
+                    <tr class ="row2">
+                        <td>2.</td>
+                        <td>Gamer</td>
+                        <td>94</td>
+                        <td>06:02</td>
+                    </tr>
+                    <tr class ="row3">
+                        <td>3.</td>
+                        <td>Shashank</td>
+                        <td>83</td>
+                        <td>04:49</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
+
+    
 </body>
 
 <script src="js/game.js"></script>
