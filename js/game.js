@@ -10,15 +10,30 @@ let snakeBody = [{ x: Math.round(2 + 18 * Math.random()), y: Math.round(2 + 18 *
 ]; // initial position
 let food = { x: Math.round(2 + 18 * Math.random()), y: Math.round(2 + 18 * Math.random()) };
 let score = 0;
+let firstVis = true;
+let mins = 0;
+let secs = 0;
 // Functions here
-setTimeout(() => {
-      //console.log("World!");
-      snakeSpeed = prompt("Welcome to Snake's Snack Time! Enter the speed of your snake: ", 10);
-}, 400);
 
+setTimeout(( ) =>{
+    let username = localStorage.getItem("username");
+    if(username === null || username == "Gamer")
+    {
+        username = prompt("Enter a nickname", "Gamer");
+        localStorage.setItem("username", username);
+        snakeSpeed = prompt("Welcome to Snake's Snack Time " + username + "! Enter the speed of your snake: ", 10);
+    }
+    else
+    {
+        snakeSpeed = prompt("Welcome back " + username + "! Enter the speed of your snake: ", 10);
+    }
+    myName.innerHTML = username;
+}, 500);
+
+let startTime = new Date().getTime()/1000;
 function main(ctime) {
     window.requestAnimationFrame(main);
-    // console.log(ctime);
+    //console.log(ctime/1000);
     if ((ctime - prevTime) / 1000 < 1 / snakeSpeed) {
         return;
     }
@@ -26,6 +41,7 @@ function main(ctime) {
         prevTime = ctime;
         DisplayGame();
     }
+    //console.log(ctime/1000);
 }
 
 function isCollide(snake) {
@@ -47,7 +63,38 @@ function isCollide(snake) {
 
 function DisplayGame() {
 
+    if(!firstVis)
+    {
+        let timeElapsed = new Date().getTime()/1000 - startTime;
+        
+        //console.log(timeElapsed);
+        timeElapsed = Math.round(timeElapsed);
+        mins = timeElapsed/60;
+        mins = Math.floor(mins);
+        // console.log("TimeElabsed" + timeElapsed);
+        // console.log("MINS" + mins);
+        // console.log("secs" + secs);
+
+        secs = timeElapsed % 60;
+        let secString, minString;
+        if(secs <= 9)
+        {
+            secString = "0"+secs;
+        }
+        else secString = secs;
+        if(mins <= 9)
+        {
+            minString = "0"+mins;
+        }
+        else minString = mins;
+        myTime.innerHTML = minString + ":" + secString;
+        //console.log();
+    }
     if (isCollide(snakeBody)) {
+        gameOverSound.play();
+        musicSound.pause();
+        firstVis = true;
+        myTime.innerHTML = "00:00";
         if (score > highScoreVal) {
             alert("Congrats! You made a new High Score. Press OK to play again.");
             highScoreVal = score;
@@ -57,9 +104,6 @@ function DisplayGame() {
         else alert("GAME OVER! Press OK to play again.");
         score = 0;
         myScore.innerHTML = "Score: " + score;
-        gameOverSound.play();
-        musicSound.pause();
-
         dir = { x: 0, y: 0 };
         snakeBody = [{ x: Math.round(2 + 18 * Math.random()), y: Math.round(2 + 18 * Math.random()) }];
         food = { x: Math.round(2 + 18 * Math.random()), y: Math.round(2 + 18 * Math.random()) };
@@ -126,8 +170,17 @@ dir = { x: 0, y: 0 }; // Starting the game
 prevDir = { x: 0, y: 0 };
 
 window.addEventListener('keydown', e => {
+    
+    if(firstVis)
+    {
+        firstVis = false;
+        startTime = new Date().getTime()/1000;
+    }
+
     musicSound.play();
     moveSound.play();
+    musicSound.volume = 0.2;
+    moveSound.volume = 0.1;
     switch (e.key) {
         case "w":
         case "ArrowUp":
